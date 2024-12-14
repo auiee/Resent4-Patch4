@@ -383,7 +383,8 @@
 				
 			}
 			
-			    document.getElementById('copy-button').addEventListener('click', function() {
+    // コピーボタンがクリックされたときの処理
+    document.getElementById('copy-button').addEventListener('click', function() {
       var textbox = document.getElementById('fixed-textbox');
       textbox.select(); // テキストを選択
       textbox.setSelectionRange(0, 99999); // モバイルでも対応
@@ -391,9 +392,9 @@
       try {
         // コピーを実行
         document.execCommand('copy');
-        alert('コピーしました: ' + textbox.value);
+        // アラートなしで、コピー後に何もしない
       } catch (err) {
-        alert('コピーに失敗しました');
+        // 何かエラーがあれば、ここで処理（エラーメッセージ表示しない）
       }
     });
 		</script>
